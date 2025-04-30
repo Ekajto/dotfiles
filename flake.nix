@@ -16,5 +16,4 @@
         configuration.imports = [ ./home.nix ];
       };
     };
-     
-}
+};
