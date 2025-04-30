@@ -1,3 +1,3 @@
 .PHONY: update
 update:
-	home-manager switch --flake .#work
+	nix run .#homeConfigurations.work.activationPackage
