@@ -8,9 +8,6 @@
   };
 
   outputs = inputs: {
-    defaultPackage.x86_64-linux = inputs.home-manager.defaultPackage.x86_64-linux;
-    defaultPackage.x86_64-darwin = inputs.home-manager.defaultPackage.x86_64-darwin;
- 
     homeConfigurations = {
       "kacperut" = inputs.home-manager.lib.homeManagerConfiguration {
         system = "x86_64-linux";
@@ -19,5 +16,5 @@
         configuration.imports = [ ./home.nix ];
       };
     };
-  };
+     
 }
