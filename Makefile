@@ -1,6 +1,6 @@
 .PHONY: update
 update:
-	nix run .#homeConfigurations.work.activationPackage
+	nix run .#homeConfigurations.${USER_PROFILE}.activationPackage
 
 .PHONY: clean
 clean:

@@ -20,7 +20,11 @@
     homeConfigurations = {
       work = inputs.home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home.nix ];
+        modules = [ ./home/work.nix ];
+      };
+      personal = inputs.home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./home/personal.nix ];
       };
     };
   };
