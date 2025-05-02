@@ -3,13 +3,9 @@
   ...
 }: {
   imports = [
-    ./global
+    ./modules/common.nix
   ];
   home = {
-    packages = with pkgs; [
-      hello
-    ];
-
     username = "kacperut";
     homeDirectory = "/home/kacperut";
 
