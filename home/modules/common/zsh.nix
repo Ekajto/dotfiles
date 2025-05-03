@@ -2,6 +2,7 @@
 let
   catppuccinTheme = builtins.fetchurl {
     url = "https://raw.githubusercontent.com/catppuccin/zsh-syntax-highlighting/main/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh";
+    sha256 = "sha256-LQjHjJftaGvbKL+1SPLwnThHH2X6m1VUqj7GQXcBQfQ=";
   };
 in
 {
