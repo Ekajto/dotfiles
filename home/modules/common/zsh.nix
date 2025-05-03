@@ -4,6 +4,7 @@ let
     url = "https://raw.githubusercontent.com/catppuccin/zsh-syntax-highlighting/main/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh";
     sha256 = "sha256-LQjHjJftaGvbKL+1SPLwnThHH2X6m1VUqj7GQXcBQfQ=";
   };
+  p10kFile = ./config/.p10k.zsh;
 in
 {
   programs.zsh = {
@@ -14,12 +15,22 @@ in
     };
     syntaxHighlighting.enable = true;
     autosuggestion.enable = true;
+    programs.zsh.plugins = [
+      {
+        name = "powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+    ];
     initExtra = ''
       if [ -f ${catppuccinTheme} ]; then
         source ${catppuccinTheme}
       fi
+
+      if [ -f ${p10kFile} ]; then
+        source ${p10kFile}
+      fi
     '';
   };
-  #home.file.".zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh".source = catppuccinTheme;
 }
 
