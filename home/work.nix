@@ -3,7 +3,7 @@
   ...
 }: {
   imports = [
-    ./modules/common.nix
+    ./modules/common
   ];
   home = {
     username = "kacperut";
