@@ -15,7 +15,7 @@ in
     };
     syntaxHighlighting.enable = true;
     autosuggestion.enable = true;
-    programs.zsh.plugins = [
+    plugins = [
       {
         name = "powerlevel10k";
         src = pkgs.zsh-powerlevel10k;
