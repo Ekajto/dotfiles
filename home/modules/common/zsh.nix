@@ -10,7 +10,7 @@ in
     enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "history" "zsh-syntax-highlighting" ];
+      plugins = [ "git" "history" "zsh-syntax-highlighting" "zsh-autosuggestions" ];
     };
     syntaxHighlighting.enable = true;
     autosuggestion.enable = true;
