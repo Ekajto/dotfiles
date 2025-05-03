@@ -22,5 +22,4 @@ in
   };
   home.file.".zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh".source = catppuccinTheme;
 }
-}
 
