@@ -2,7 +2,7 @@
   imports = [
     ./direnv.nix
     ./zsh.nix
-    ./kitty.nix
+    ./alacritty.nix
   ];
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
