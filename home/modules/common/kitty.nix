@@ -6,8 +6,6 @@
     enable = true;
     themeFile = "Catppuccin-Mocha";
     font = {
-      name = "Cascadia Code"
-    };
+      name = "Cascadia Code"; 
   };
-
 }
