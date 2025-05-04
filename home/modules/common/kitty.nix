@@ -7,5 +7,6 @@
     themeFile = "Catppuccin-Mocha";
     font = {
       name = "Cascadia Code"; 
+    };
   };
 }
