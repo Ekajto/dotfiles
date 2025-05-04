@@ -2,8 +2,11 @@
   imports = [
     ./direnv.nix
     ./zsh.nix
+    ./kitty.nix
   ];
-   home.packages = with pkgs; [
+  fonts.fontconfig.enable = true
+  home.packages = with pkgs; [
+    cascadia-code
     jq
     ];
 }
