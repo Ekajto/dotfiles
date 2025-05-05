@@ -1,8 +1,8 @@
-{pkgs, ...}: {
+{pkgs, nixgl, ...}: {
   imports = [
     ./direnv.nix
     ./zsh.nix
-    ./alacritty.nix
+    ./kitty.nix
   ];
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [

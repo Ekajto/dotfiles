@@ -11,4 +11,8 @@
 
     stateVersion = "24.11";
   };
+  nixGL.packages = nixgl.packages;
+  nixGL.defaultWrapper = "mesa";
+  nixGL.offloadWrapper = "nvidiaPrime";
+  nixGL.installScripts = [ "mesa" "nvidiaPrime" ];
 }
