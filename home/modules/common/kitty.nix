@@ -16,7 +16,10 @@
       bold_italic_font = "auto";
     };
     extraConfig = ''
-      startup_session launch sh -c "tmux -T hyperlinks new -A -s 0"
+      startup_session launch.conf
     '';
   };
+  home.file.".config/kitty/launch.conf".text = ''
+  launch sh -c "tmux -T hyperlinks new -A -s 0"
+'';
 }
