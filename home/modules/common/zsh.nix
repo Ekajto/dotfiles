@@ -15,6 +15,7 @@ in
     };
     syntaxHighlighting.enable = true;
     autosuggestion.enable = true;
+    dotDir = ".config/zsh";
     plugins = [
       {
         name = "powerlevel10k";

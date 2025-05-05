@@ -7,12 +7,12 @@
     mouse = true;
     terminal = "tmux-256color";
     baseIndex = 1;
+    shell = "${pkgs.zsh}/bin/zsh";
     keyMode = "vi";
     extraConfig = ''
       unbind r
       bind r source-file ~/.config/tmux/tmux.conf \; display-message "Config reloaded..."
 
-      set -ag terminal-overrides ",xterm-256color:RGB"
       set-option -g status-position top
 
       bind-key h select-pane -L
@@ -28,7 +28,8 @@
       {
         plugin = catppuccin;
         extraConfig = ''
-          set -g @catppuccin_flavor 'mocha'
+          set -g @catppuccin_flavor "mocha"
+          set -g @catppuccin_window_status_style "rounded"
           set -g @catppuccin_window_default_fill "number"
           set -g @catppuccin_window_default_text "#W "
           set -g @catppuccin_window_current_fill "number"

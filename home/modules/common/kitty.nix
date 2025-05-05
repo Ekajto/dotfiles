@@ -7,9 +7,10 @@
     package = config.lib.nixGL.wrap pkgs.kitty;
     themeFile = "Catppuccin-Mocha";
     font = {
-      name = "Cascadia Code";
+      name = "CaskaydiaCove Nerd Font";
       size = 14;
     };
+    shellIntegration.enableZshIntegration = true;
     settings = {
       bold_font = "auto";
       italic_font = "auto";
