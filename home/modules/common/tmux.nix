@@ -5,6 +5,7 @@
     enable = true;
     shortcut = "q";
     mouse = true;
+    shell = "${pkgs.zsh}/bin/zsh";
     terminal = "tmux-256color";
     baseIndex = 1;
     shell = "${pkgs.zsh}/bin/zsh";

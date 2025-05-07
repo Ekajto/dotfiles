@@ -6,6 +6,7 @@
     enable = true;
     package = config.lib.nixGL.wrap pkgs.kitty;
     themeFile = "Catppuccin-Mocha";
+    shellIntegration.enableZshIntegration = true;
     font = {
       name = "CaskaydiaCove Nerd Font";
       size = 14;
