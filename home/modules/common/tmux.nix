@@ -8,7 +8,6 @@
     shell = "${pkgs.zsh}/bin/zsh";
     terminal = "tmux-256color";
     baseIndex = 1;
-    shell = "${pkgs.zsh}/bin/zsh";
     keyMode = "vi";
     extraConfig = ''
       unbind r
