@@ -3,6 +3,12 @@
 let
   localApplications = ".local/share/applications";
   kittyPkg = config.lib.nixGL.wrap pkgs.kitty;
+  patchedDesktop = name: pkgs.runCommand "kitty-${name}.desktop" {} ''
+    sed \
+      -e "s|Exec=kitty|Exec=${kittyPkg}/bin/kitty|g" \
+      -e "s|Icon=kitty|Icon=${kittyPkg}/share/icons/hicolor/256x256/apps/kitty.png|g" \
+      "${kittyPkg}/share/applications/${name}.desktop" > $out
+  '';
 in
 {
   programs.kitty = {
@@ -14,7 +20,6 @@ in
       name = "CaskaydiaCove Nerd Font";
       size = 14;
     };
-    shellIntegration.enableZshIntegration = true;
     settings = {
       bold_font = "auto";
       italic_font = "auto";
@@ -28,14 +33,12 @@ in
   launch sh -c "tmux -T hyperlinks new -A -s 0"
 '';
 
-  # Copy .desktop files from the Nix store to the applications directory
-  home.file."${localApplications}/kitty.desktop".source = "${kittyPkg}/share/applications/kitty.desktop";
-  home.file."${localApplications}/kitty-open.desktop".source = "${kittyPkg}/share/applications/kitty-open.desktop";
-  home.file.".local/bin/kitty".source = "${kittyPkg}/bin/kitty";
-  home.file.".local/bin/kitten".source = "${kittyPkg}/bin/kitten";
-  # Patch the .desktop files after they're created, using the variable
-  home.activation.fixKittyDesktop = lib.hm.dag.entryAfter ["linkGeneration"] ''
-    sed -i "s|Exec=kitty|Exec=${kittyPkg}/bin/kitty|g" ${localApplications}/kitty*.desktop
-    sed -i "s|Icon=kitty|Icon=${kittyPkg}/share/icons/hicolor/256x256/apps/kitty.png|g" ${localApplications}/kitty*.desktop
-  '';
+  #xdg.dataFile = {
+  #  "applications/kitty.desktop".source = patchedDesktop "kitty";
+  #  "applications/kitty-open.desktop".source = patchedDesktop "kitty-open";
+  #};
+    xdg.dataFile = {
+    "applications/kitty.desktop".source = "${kittyPkg}/share/applications/kitty.desktop";
+    "applications/kitty-open.desktop".source = "${kittyPkg}/share/applications/kitty-open.desktop";
+  };
 }
