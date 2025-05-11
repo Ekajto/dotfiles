@@ -9,16 +9,12 @@
     terminal = "tmux-256color";
     baseIndex = 1;
     keyMode = "vi";
+    customPaneNavigationAndResize = true;
     extraConfig = ''
       unbind r
       bind r source-file ~/.config/tmux/tmux.conf \; display-message "Config reloaded..."
 
       set-option -g status-position top
-
-      bind-key h select-pane -L
-      bind-key j select-pane -D
-      bind-key k select-pane -U
-      bind-key l select-pane -R
 
       bind v split-window -v -c "#{pane_current_path}"
       bind b split-window -h -c "#{pane_current_path}"
