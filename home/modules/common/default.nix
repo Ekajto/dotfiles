@@ -14,5 +14,7 @@
     jq
     kubectl
     kubectx
+    docker
+    docker-compose
     ];
 }
