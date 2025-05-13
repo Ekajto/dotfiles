@@ -5,10 +5,10 @@
     enable = true;
     shortcut = "q";
     mouse = true;
-    shell = "${pkgs.zsh}/bin/zsh";
     terminal = "tmux-256color";
     baseIndex = 1;
     keyMode = "vi";
+    shell = "${pkgs.zsh}/bin/zsh";
     customPaneNavigationAndResize = true;
     extraConfig = ''
       unbind r

@@ -8,7 +8,8 @@
   home = {
     username = "ekajto";
     homeDirectory = "/home/ekajto";
-
+    shell.enableZshIntegration = true;
+    shell.enableShellIntegration = false;
     stateVersion = "24.11";
   };
   nixGL.packages = nixgl.packages;
