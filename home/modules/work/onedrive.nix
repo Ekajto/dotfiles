@@ -1,0 +1,5 @@
+{
+  programs.onedrive = {
+    enable = true;
+  };
+}

@@ -4,6 +4,7 @@
 }: {
   imports = [
     ./modules/common
+    ./modules/work
   ];
   home = {
     username = "kacperut";
