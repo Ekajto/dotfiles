@@ -12,5 +12,7 @@
     #(nerdfonts.override { fonts = [ "CascadiaCode" ]; })
     nerd-fonts.caskaydia-cove
     jq
+    kubectl
+    kubectx
     ];
 }
