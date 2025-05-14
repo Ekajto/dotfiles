@@ -1,5 +1,4 @@
-{ config, lib, pkgs, ... }:
-
+{ lib, pkgs, ... }:
 {
   programs.neovim = {
     enable = true;
@@ -9,6 +8,15 @@
       stylua
       # Telescope
       ripgrep
+      #LSP
+      nixd
+      nil
+      nixfmt-rfc-style
+      terraform-ls
+      ansible-language-server
+      docker-compose-language-service
+      dockerfile-language-server-nodejs
+      helm-ls
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -17,7 +25,7 @@
 
     extraLuaConfig =
       let
-        plugins = with pkgs.vimPlugins; [
+      plugins = with pkgs.vimPlugins; [
           # LazyVim
           LazyVim
           bufferline-nvim

@@ -1,5 +1,5 @@
 {
-  lib, pkgs, nixgl,
+  nixgl,
   ...
 }: {
   imports = [
