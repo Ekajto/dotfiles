@@ -16,10 +16,6 @@
     kubectx
     docker
     docker-compose
-    ripgrep
-    fd
-    fzf
     lazygit
-    gcc
     ];
 }
