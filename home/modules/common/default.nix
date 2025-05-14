@@ -4,7 +4,7 @@
     ./zsh.nix
     ./kitty.nix
     ./tmux.nix
-    ./nvim2.nix
+    ./nvim.nix
     ./k9s.nix
   ];
   fonts.fontconfig.enable = true;
