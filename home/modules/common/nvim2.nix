@@ -1,3 +1,5 @@
+{ config, pkgs, ... }:
+
 {
   programs.neovim = {
     enable = true;
@@ -7,5 +9,8 @@
     vimdiffAlias = true;
   };
 
-xdg.configFile."nvim".source = "./config/nvim/";
+  xdg.configFile."nvim" = {
+    source = config.lib.file.mkOutOfStoreSymlink ./config/nvim;
+    recursive = true;
+  };
 }

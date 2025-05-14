@@ -19,7 +19,6 @@
     ripgrep
     fd
     fzf
-    fzf-lua
     lazygit
     gcc
     ];
